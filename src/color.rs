@@ -51,6 +51,12 @@ pub enum ColorPrimaries {
     EBU3213 = 22,
 }
 
+impl Default for ColorPrimaries {
+    fn default() -> Self {
+        Self::Unspecified
+    }
+}
+
 
 /// Gamma correction, essentially.
 /// As defined by “Transfer characteristics” section of ISO/IEC 23091-4/ITU-TH.273.
@@ -90,6 +96,12 @@ pub enum TransferCharacteristics {
     SMPTE428 = 17,
     /// BT.2100 HLG (Hybrid Log Gamma), ARIB STD-B67
     HLG = 18,
+}
+
+impl Default for TransferCharacteristics {
+    fn default() -> Self {
+        Self::Unspecified
+    }
 }
 
 /// Bit depth (8 = 1 byte, >=10 = 2 bytes)
@@ -140,6 +152,12 @@ pub enum MatrixCoefficients {
     ChromatCL = 13,
     /// BT.2020 ICtCp
     ICtCp = 14,
+}
+
+impl Default for MatrixCoefficients {
+    fn default() -> Self {
+        Self::Unspecified
+    }
 }
 
 #[repr(C)]
